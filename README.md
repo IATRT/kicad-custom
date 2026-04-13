@@ -1,8 +1,71 @@
-# KiCad README
+# IATRT Internal KiCad Build
 
-For specific documentation about [building KiCad](https://dev-docs.kicad.org/en/build/), policies
-and guidelines, and source code documentation see the
-[Developer Documentation](https://dev-docs.kicad.org) website.
+> **⚠ THIS IS NOT OFFICIAL KICAD ⚠**
+>
+> This repository is an **internal fork** maintained by
+> [IATRT](https://github.com/IATRT) for in-house hardware development.
+> It is **not affiliated with, endorsed by, or supported by the KiCad project**
+> or its developers in any way.
+>
+> - Do **not** report bugs found here to the official KiCad bug tracker
+> - Do **not** assume anything here represents planned or accepted KiCad functionality
+> - Do **not** use this build outside IATRT without fully understanding it carries
+>   unsupported, untested-by-upstream modifications
+>
+> **For official KiCad visit [kicad.org](https://kicad.org)**
+
+---
+
+## What is this
+
+A **private, internal build** of KiCad 10.0 with IATRT-specific additions.
+Not intended for public consumption. Not a PR. Not a proposal. Not a complaint.
+Just a fork we use at work.
+
+Upstream base: `gitlab.com/kicad/code/kicad` · branch `10.0`
+
+---
+
+## IATRT additions
+
+### LCSC / EasyEDA Import Panel
+New **LCSC Import** tab in the symbol chooser — import parts from LCSC/EasyEDA
+without leaving the schematic editor.
+
+- Parts stage to `/tmp/kicad_lcsc_<pid>/` on import; your library is untouched until **Add to Library** is clicked
+- S-expression-aware symbol merge on save (no duplicates, no silent overwrites)
+- Footprint copy with 3D-model absolute-path rewrite
+- Symbol preview + unit dropdown for multi-unit parts
+- Footprint 2D + 3D side-by-side preview
+- 400 ms watchdog retries both previews if the first render missed (Wayland timing)
+
+### Footprint Preview Zoom Fix
+`fitToCurrentFootprint()` rewritten with `ToWorld/SetScale` + `CallAfter`
+deferred fit — fixes silent autozoom failure on hidden canvases under Wayland.
+
+### 3D Model Preview Widget
+`FOOTPRINT_3D_PREVIEW_WIDGET` embeds the KiCad 3D viewer into any dialog.
+
+### Wayland / EGL Build
+EGL-native GAL backend; no XWayland required.
+See [`WAYLAND_BUILD_CHANGES.md`](WAYLAND_BUILD_CHANGES.md).
+
+---
+
+## License
+
+KiCad is [GNU GPL v3](LICENSE). This fork inherits that license. All IATRT
+additions are likewise GPLv3 in compliance with upstream terms.
+
+The KiCad name and trademarks belong to the KiCad project. Use here is
+purely descriptive and implies no official relationship.
+
+---
+
+## Original KiCad documentation
+
+For building, policies, and source documentation see the
+[KiCad Developer Documentation](https://dev-docs.kicad.org) website.
 
 You may also take a look into the [Wiki](https://gitlab.com/kicad/code/kicad/-/wikis/home),
 the [contribution guide](https://dev-docs.kicad.org/en/contribute/).
