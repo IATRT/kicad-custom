@@ -29,6 +29,7 @@ Upstream base: `gitlab.com/kicad/code/kicad` · branch `10.0`
 ## IATRT additions
 
 ### LCSC / EasyEDA Import Panel
+![KiCAD Schematic](Screenshot_From_2026-04-13_10-17-57.png)
 New **LCSC Import** tab in the symbol chooser — import parts from LCSC/EasyEDA
 without leaving the schematic editor.
 
@@ -45,6 +46,7 @@ deferred fit — fixes silent autozoom failure on hidden canvases under Wayland.
 
 ### 3D Model Preview Widget
 `FOOTPRINT_3D_PREVIEW_WIDGET` embeds the KiCad 3D viewer into any dialog.
+
 
 ### Wayland / EGL Build
 EGL-native GAL backend; no XWayland required.
