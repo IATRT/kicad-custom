@@ -36,18 +36,18 @@ New **LCSC Import** tab in the symbol chooser — import parts from LCSC/EasyEDA
 
 Type an LCSC part number, hit Import, and the symbol, footprint, and 3D model are fetched and staged immediately. Symbol and footprint previews update live. Click **Add to Library** to permanently save the part into your local LCSC_Parts library.
 
-![LCSC Import tab — symbol preview (Unit A) and 2D footprint](docs/screenshots/Screenshot.From.2026-04-13.10-17-57.png)
+![LCSC Import tab — symbol preview (Unit A) and 2D footprint](https://github.com/IATRT/kicad-custom/releases/download/kicad_custom_10.0.1_ubuntu26/Screenshot.From.2026-04-13.10-17-57.png)
 *LCSC Import tab showing INA2143U (C1346558) — Unit A symbol preview with 2D footprint below*
 
-![LCSC Import tab — Unit B and 3D footprint preview](docs/screenshots/Screenshot.From.2026-04-13.10-18-13.png)
+![LCSC Import tab — Unit B and 3D footprint preview](https://github.com/IATRT/kicad-custom/releases/download/kicad_custom_10.0.1_ubuntu26/Screenshot.From.2026-04-13.10-18-13.png)
 *Switching to Unit B and the 3D tab — SOIC-14 model renders live in the dialog*
 
 Once added, the part is immediately searchable in the standard Library tab with full metadata:
 
-![Part visible in Library tab after import — 2D view](docs/screenshots/Screenshot.From.2026-04-13.10-18-51.png)
+![Part visible in Library tab after import — 2D view](https://github.com/IATRT/kicad-custom/releases/download/kicad_custom_10.0.1_ubuntu26/Screenshot.From.2026-04-13.10-18-51.png)
 *Part appears in the Library tab under LCSC_Parts with symbol, 2D footprint, and full datasheet/manufacturer metadata*
 
-![Part visible in Library tab after import — 3D view](docs/screenshots/Screenshot.From.2026-04-13.10-19-00.png)
+![Part visible in Library tab after import — 3D view](https://github.com/IATRT/kicad-custom/releases/download/kicad_custom_10.0.1_ubuntu26/Screenshot.From.2026-04-13.10-19-00.png)
 *3D footprint preview available directly in the Library tab after import*
 
 **Under the hood:**
